@@ -25,6 +25,10 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'rack-attack'
 
+gem 'devise'
+
+gem 'simple_token_authentication', '~> 1.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

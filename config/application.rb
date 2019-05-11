@@ -35,6 +35,8 @@ module BackEnd
       end      
     end
 
+    config.middleware.use Rack::Attack
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
