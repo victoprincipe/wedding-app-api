@@ -24,8 +24,17 @@ module BackEnd
       YAML.load(File.open(env_file)).each do |key, value|
         ENV[key.to_s] = value
       end if File.exists?(env_file)
-    end
+    end   
     
+    config.middleware.insert_before 0, Rack::Cors do 
+      allow do      
+        origins '*'      
+        resource '*',      
+          headers: :any,      
+          methods: %i(get post put patch delete options head)      
+      end      
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
