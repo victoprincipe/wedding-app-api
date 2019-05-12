@@ -6,9 +6,9 @@ module Api::V1
         user.wallet = 1000
         
         if user.save
-            render json: user.as_json(only: [:name, :email, :wallet, :authentication_token])
+          render json: user.as_json(only: [:name, :email, :wallet, :authentication_token]),status: :ok
         else
-            render json: :error
+          render json: {message:'Error persisting data'},status: :unprocessable_entity 
         end
     end
 
