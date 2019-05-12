@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         resources :product 
         resources :sessions, only: [:create, :destroy]
         resources :sign_up, only: [:create]
+        resources :files, only: [:index]
       end
   end  
 end
